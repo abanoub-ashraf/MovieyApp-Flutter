@@ -20,3 +20,4 @@ analyzer:
     slash_for_doc_comments: ignore
     sort_child_properties_last: ignore
     prefer_if_elements_to_conditional_expressions: ignore
+    constant_identifier_names: ignore

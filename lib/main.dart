@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:moviey_app/app/app_widget.dart';
+import 'package:http/http.dart';
+
+import 'app/app_widget.dart';
+import 'data/core/api_client.dart';
+import 'data/data_sources/movie_remote_data_source.dart';
+import 'data/data_sources/movie_remote_data_source_implementation.dart';
 
 ///
 /// - the layers of the apps are presentation, domain and data
@@ -20,6 +25,17 @@ import 'package:moviey_app/app/app_widget.dart';
 /// - common folder contains constants, extensions and utils in general
 ///
                                        
-void main() => runApp(
-    const AppWidget()
-);
+void main() {
+    final ApiClient apiClient = ApiClient(Client());
+
+    final MovieRemoteDataSource dataSource = MovieRemoteDataSourceImplementation(apiClient);
+    
+    dataSource.getTrending();
+    dataSource.getPopular();
+    dataSource.getPlayingNow();
+    dataSource.getComingSoon();
+    
+    runApp(
+        const AppWidget()
+    );
+}
