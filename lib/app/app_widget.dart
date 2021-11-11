@@ -6,15 +6,13 @@ class AppWidget extends StatelessWidget {
     @override
     Widget build(BuildContext context) {
         return MaterialApp(
-            title: 'Material App',
-            home: Scaffold(
-                appBar: AppBar(
-                    title: const Text('Material App Bar'),
-                ),
-                body: const Center(
-                    child: Text('Hello World'),
-                ),
+            debugShowCheckedModeBanner: false,
+            title: 'Flutter Demo',
+            theme: ThemeData(
+                primarySwatch: Colors.green,
+                visualDensity: VisualDensity.adaptivePlatformDensity,
             ),
+            home: Container(),
         );
     }
 }
