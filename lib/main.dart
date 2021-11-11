@@ -1,18 +1,15 @@
 // ignore_for_file: avoid_print
 
+import 'dart:async';
+
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart';
-import 'package:moviey_app/domain/entities/app_error.dart';
-import 'package:moviey_app/domain/entities/movie_entity.dart';
-import 'package:moviey_app/domain/entities/no_params.dart';
 
 import 'app/app_widget.dart';
-import 'data/core/api_client.dart';
-import 'data/data_sources/movie_remote_data_source.dart';
-import 'data/data_sources/movie_remote_data_source_implementation.dart';
-import 'data/repositories/movie_repository_implementation.dart';
-import 'domain/repositories/movie_repository.dart';
+import 'di/get_it.dart' as getIt;
+import 'domain/entities/app_error.dart';
+import 'domain/entities/movie_entity.dart';
+import 'domain/entities/no_params.dart';
 import 'domain/usecases/get_trending_use_case.dart';
 
 ///
@@ -35,11 +32,18 @@ import 'domain/usecases/get_trending_use_case.dart';
 ///
                                        
 Future<void> main() async {
-    final ApiClient apiClient = ApiClient(Client());
+    ///
+    /// - unawaited means don't wait for the future till its done and keep going 
+    ///   through the rest of the app
+    /// 
+    /// - we solved all the dependency injection in a separate file inside a future function
+    ///   and we just wanna initialize that future function cause we need the first use of 
+    ///   its content but also without waiting for its future return type to wait, 
+    ///   we will ignore it
+    ///
+    unawaited(getIt.init());
 
-    final MovieRemoteDataSource dataSource  = MovieRemoteDataSourceImplementation(apiClient);
-    final MovieRepository movieRepository   = MovieRepositoryImplementation(dataSource);
-    final GetTrendingUseCase getTrending    = GetTrendingUseCase(movieRepository);
+    final GetTrendingUseCase getTrending = getIt.getItInstance<GetTrendingUseCase>();
     
     final Either<AppError, List<MovieEntity>> eitherResponse = await getTrending(NoParams());
 
