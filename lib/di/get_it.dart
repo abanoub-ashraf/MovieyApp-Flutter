@@ -1,5 +1,6 @@
 import 'package:get_it/get_it.dart';
 import 'package:http/http.dart';
+import 'package:moviey_app/presentation/blocs/movie_carousal_bloc/movie_carousal_bloc.dart';
 
 import '../data/core/api_client.dart';
 import '../data/data_sources/movie_remote_data_source.dart';
@@ -36,30 +37,50 @@ Future init() async {
     /// - same things for each of the following lines beneath this one
     ///
     getItInstance.registerLazySingleton<ApiClient>(
-        () => ApiClient(getItInstance())
+        () => ApiClient(
+            getItInstance()
+        )
     );
     
     getItInstance.registerLazySingleton<MovieRemoteDataSource>(
-        () => MovieRemoteDataSourceImplementation(getItInstance())
+        () => MovieRemoteDataSourceImplementation(
+            getItInstance()
+        )
     );
 
     getItInstance.registerLazySingleton<MovieRepository>(
-        () => MovieRepositoryImplementation(getItInstance())
+        () => MovieRepositoryImplementation(
+            getItInstance()
+        )
     );
 
     getItInstance.registerLazySingleton<GetTrendingUseCase>(
-        () => GetTrendingUseCase(getItInstance())
+        () => GetTrendingUseCase(
+            getItInstance()
+        )
     );
 
     getItInstance.registerLazySingleton<GetComingSoonUseCase>(
-        () => GetComingSoonUseCase(getItInstance())
+        () => GetComingSoonUseCase(
+            getItInstance()
+        )
     );
 
     getItInstance.registerLazySingleton<GetPopularUseCase>(
-        () => GetPopularUseCase(getItInstance())
+        () => GetPopularUseCase(
+            getItInstance()
+        )
     );
 
     getItInstance.registerLazySingleton<GetPlayingNowUseCase>(
-        () => GetPlayingNowUseCase(getItInstance())
+        () => GetPlayingNowUseCase(
+            getItInstance()
+        )
+    );
+
+    getItInstance.registerFactory(
+        () => MovieCarousalBloc(
+            getTrendingUseCase: getItInstance()
+        )
     );
 }

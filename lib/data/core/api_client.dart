@@ -1,8 +1,9 @@
 import 'dart:convert';
 
 import 'package:http/http.dart';
-import 'api_constants.dart';
+
 import '../../utils/config.dart';
+import 'api_constants.dart';
 
 ///
 /// this class contains all the redundant code in each api call

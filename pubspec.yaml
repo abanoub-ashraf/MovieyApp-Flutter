@@ -15,7 +15,10 @@ dependencies:
   equatable: ^2.0.3
   flutter:
     sdk: flutter
+  flutter_bloc: ^8.0.0
+  flutter_screenutil: ^5.0.1
   get_it: ^7.2.0
+  google_fonts: ^2.1.0
   http: ^0.13.4
 
 dev_dependencies:
@@ -42,3 +45,5 @@ flutter:
 
   assets:
     - assets/icons/
+    - assets/pngs/
+    - assets/svgs/
