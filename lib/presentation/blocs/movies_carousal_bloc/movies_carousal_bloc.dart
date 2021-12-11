@@ -5,24 +5,24 @@ import '../../../domain/entities/movie_entity.dart';
 import '../../../domain/entities/no_params.dart';
 import '../../../domain/usecases/get_trending_use_case.dart';
 
-part 'movie_carousal_event.dart';
-part 'movie_carousal_state.dart';
+part 'movies_carousal_event.dart';
+part 'movies_carousal_state.dart';
 
-class MovieCarousalBloc extends Bloc<MovieCarousalEvent, MovieCarousalState> {
+class MoviesCarousalBloc extends Bloc<MoviesCarousalEvent, MoviesCarousalState> {
     final GetTrendingUseCase getTrendingUseCase;
 
-    MovieCarousalBloc({
+    MoviesCarousalBloc({
         required this.getTrendingUseCase
     }) : super(
-        MovieCarousalStateInitial()
+        MoviesCarousalStateInitial()
     ) {
         on<CarousalLoadEvent>((event, emit) async {
             final moviesEither = await getTrendingUseCase(NoParams());
             
             emit(
                 moviesEither.fold(
-                    (error) => MovieCarousalStateError(), 
-                    (loadedMovies) => MovieCarousalStateLoaded(
+                    (error) => MoviesCarousalStateError(), 
+                    (loadedMovies) => MoviesCarousalStateLoaded(
                         movies: loadedMovies, 
                         defaultIndex: event.defaultIndex
                     )

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:moviey_app/presentation/screens/home_screen.dart';
-import 'package:moviey_app/presentation/themes/app_colors.dart';
-import 'package:moviey_app/presentation/themes/theme_text.dart';
+import 'package:moviey_app/presentation/screens/home_screen/home_screen.dart';
+import '../presentation/themes/app_colors.dart';
+import '../presentation/themes/theme_text.dart';
 
 class MovieyApp extends StatelessWidget {
     const MovieyApp({ Key? key }) : super(key: key);

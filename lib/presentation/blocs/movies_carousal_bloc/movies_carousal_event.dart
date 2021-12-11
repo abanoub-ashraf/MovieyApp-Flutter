@@ -1,13 +1,13 @@
-part of 'movie_carousal_bloc.dart';
+part of 'movies_carousal_bloc.dart';
 
-abstract class MovieCarousalEvent extends Equatable {
-    const MovieCarousalEvent();
+abstract class MoviesCarousalEvent extends Equatable {
+    const MoviesCarousalEvent();
 
     @override
     List<Object> get props => [];
 }
 
-class CarousalLoadEvent extends MovieCarousalEvent {
+class CarousalLoadEvent extends MoviesCarousalEvent {
     final int defaultIndex;
 
     ///

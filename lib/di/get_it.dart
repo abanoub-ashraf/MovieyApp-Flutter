@@ -1,16 +1,18 @@
 import 'package:get_it/get_it.dart';
 import 'package:http/http.dart';
-import 'package:moviey_app/presentation/blocs/movie_carousal_bloc/movie_carousal_bloc.dart';
 
 import '../data/core/api_client.dart';
 import '../data/data_sources/movie_remote_data_source.dart';
 import '../data/data_sources/movie_remote_data_source_implementation.dart';
 import '../data/repositories/movie_repository_implementation.dart';
+
 import '../domain/repositories/movie_repository.dart';
 import '../domain/usecases/get_coming_soon_use_case.dart';
 import '../domain/usecases/get_playing_now_use_case.dart';
 import '../domain/usecases/get_popular_use_case.dart';
 import '../domain/usecases/get_trending_use_case.dart';
+
+import '../presentation/blocs/movies_carousal_bloc/movies_carousal_bloc.dart';
 
 ///
 /// I is a short form to access the instance of GetIt
@@ -79,7 +81,7 @@ Future init() async {
     );
 
     getItInstance.registerFactory(
-        () => MovieCarousalBloc(
+        () => MoviesCarousalBloc(
             getTrendingUseCase: getItInstance()
         )
     );

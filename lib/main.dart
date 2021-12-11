@@ -106,7 +106,11 @@ import 'di/get_it.dart' as getIt;
 void main() {
     WidgetsFlutterBinding.ensureInitialized();
 
-    unawaited(SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]));
+    unawaited(
+        SystemChrome.setPreferredOrientations([
+            DeviceOrientation.portraitUp
+        ])
+    );
     
     ///
     /// - unawaited means don't wait for the future till its done and keep going 

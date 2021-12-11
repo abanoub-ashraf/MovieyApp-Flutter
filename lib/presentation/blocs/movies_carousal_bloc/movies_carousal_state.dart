@@ -1,21 +1,21 @@
-part of 'movie_carousal_bloc.dart';
+part of 'movies_carousal_bloc.dart';
 
-abstract class MovieCarousalState extends Equatable {
-    const MovieCarousalState();
+abstract class MoviesCarousalState extends Equatable {
+    const MoviesCarousalState();
     
     @override
     List<Object> get props => [];
 }
 
-class MovieCarousalStateInitial extends MovieCarousalState {}
+class MoviesCarousalStateInitial extends MoviesCarousalState {}
 
-class MovieCarousalStateError extends MovieCarousalState {}
+class MoviesCarousalStateError extends MoviesCarousalState {}
 
-class MovieCarousalStateLoaded extends MovieCarousalState {
+class MoviesCarousalStateLoaded extends MoviesCarousalState {
     final List<MovieEntity> movies;
     final int defaultIndex;
 
-    const MovieCarousalStateLoaded({
+    const MoviesCarousalStateLoaded({
         required this.movies,
         this.defaultIndex = 0,
     }) : assert(
