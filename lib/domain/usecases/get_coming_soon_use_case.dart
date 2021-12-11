@@ -1,11 +1,10 @@
-// ignore_for_file: unnecessary_await_in_return
-
 import 'package:dartz/dartz.dart';
-import 'package:moviey_app/domain/entities/app_error.dart';
-import 'package:moviey_app/domain/entities/movie_entity.dart';
-import 'package:moviey_app/domain/entities/no_params.dart';
-import 'package:moviey_app/domain/repositories/movie_repository.dart';
-import 'package:moviey_app/domain/usecases/use_case.dart';
+
+import '../entities/app_error.dart';
+import '../entities/movie_entity.dart';
+import '../entities/no_params.dart';
+import '../repositories/movie_repository.dart';
+import 'use_case.dart';
 
 ///
 /// - this usecase will extend the usecase generic class giving it the type that 
@@ -21,6 +20,6 @@ class GetComingSoonUseCase extends UseCase<List<MovieEntity>, NoParams> {
 
     @override
     Future<Either<AppError, List<MovieEntity>>> call(NoParams noParams) async {
-        return await repository.getComingSoon();
+        return repository.getComingSoon();
     }
 }

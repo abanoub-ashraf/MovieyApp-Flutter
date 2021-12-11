@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:moviey_app/presentation/screens/home_screen/movies_carousal/movie_card_widget.dart';
+import 'movie_card_widget.dart';
 
 class AnimatedMovieCardWidget extends StatelessWidget {
     final int index;
@@ -39,7 +39,7 @@ class AnimatedMovieCardWidget extends StatelessWidget {
                     
                     return Align(
                         alignment: Alignment.topCenter,
-                        child: Container(
+                        child: SizedBox(
                             height: Curves
                                 .easeIn
                                 .transform(value) * ScreenUtil().screenHeight * 0.35,
@@ -50,7 +50,7 @@ class AnimatedMovieCardWidget extends StatelessWidget {
                 } else {
                     return Align(
                         alignment: Alignment.topCenter,
-                        child: Container(
+                        child: SizedBox(
                             height: Curves
                                 .easeIn
                                 .transform(index == 0 ? value : value * 0.5) * ScreenUtil().screenHeight * 0.35,

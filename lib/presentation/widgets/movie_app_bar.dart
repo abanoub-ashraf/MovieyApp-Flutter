@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:moviey_app/presentation/themes/app_assets.dart';
-import 'package:moviey_app/presentation/widgets/logo_widget.dart';
+
+import '../themes/app_assets.dart';
+import 'logo_widget.dart';
 
 class MovieAppBar extends StatelessWidget {
     const MovieAppBar({ Key? key }) : super(key: key);

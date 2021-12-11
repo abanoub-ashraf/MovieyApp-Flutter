@@ -1,5 +1,3 @@
-// ignore_for_file: unnecessary_await_in_return
-
 import 'package:dartz/dartz.dart';
 import 'package:moviey_app/domain/entities/app_error.dart';
 import 'package:moviey_app/domain/entities/no_params.dart';
@@ -33,6 +31,6 @@ class GetTrendingUseCase extends UseCase<List<MovieEntity>, NoParams> {
 
     @override
     Future<Either<AppError, List<MovieEntity>>> call(NoParams noParams) async {
-        return await repository.getTrending();
+        return repository.getTrending();
     }
 }

@@ -5,13 +5,12 @@ import '../data/core/api_client.dart';
 import '../data/data_sources/movie_remote_data_source.dart';
 import '../data/data_sources/movie_remote_data_source_implementation.dart';
 import '../data/repositories/movie_repository_implementation.dart';
-
 import '../domain/repositories/movie_repository.dart';
 import '../domain/usecases/get_coming_soon_use_case.dart';
 import '../domain/usecases/get_playing_now_use_case.dart';
 import '../domain/usecases/get_popular_use_case.dart';
 import '../domain/usecases/get_trending_use_case.dart';
-
+import '../presentation/blocs/movie_backdrop_bloc/movie_backdrop_bloc.dart';
 import '../presentation/blocs/movies_carousal_bloc/movies_carousal_bloc.dart';
 
 ///
@@ -81,8 +80,13 @@ Future init() async {
     );
 
     getItInstance.registerFactory(
+        () => MovieBackdropBloc()
+    );
+
+    getItInstance.registerFactory(
         () => MoviesCarousalBloc(
-            getTrendingUseCase: getItInstance()
+            getTrendingUseCase: getItInstance(),
+            movieBackdropBloc: getItInstance()
         )
     );
 }

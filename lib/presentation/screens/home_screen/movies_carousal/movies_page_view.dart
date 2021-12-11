@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:moviey_app/domain/entities/movie_entity.dart';
-import 'package:moviey_app/presentation/screens/home_screen/movies_carousal/animated_movie_card_widget.dart';
-import 'package:moviey_app/presentation/screens/home_screen/movies_carousal/movie_card_widget.dart';
+
+import '../../../../domain/entities/movie_entity.dart';
+import '../../../blocs/movie_backdrop_bloc/movie_backdrop_bloc.dart';
+import 'animated_movie_card_widget.dart';
 
 class MoviesPageView extends StatefulWidget {
     final List<MovieEntity> movies;
@@ -66,7 +68,18 @@ class _MoviesPageViewState extends State<MoviesPageView> {
                 itemCount: widget.movies.length,
                 controller: _pageController,
                 pageSnapping: true,
-                onPageChanged: (index) {}
+                ///
+                /// once the page changes the event will be sent to the bloc to
+                /// start loading the image of the currently displayed movie in the background
+                ///
+                onPageChanged: (index) {
+                    BlocProvider.of<MovieBackdropBloc>(context)
+                        .add(
+                            MovieBackdropChangedEvent(
+                                movie: widget.movies[index]
+                            )
+                        );
+                }
             ),
         );
     }
