@@ -15,7 +15,7 @@ class MovieBackdropWidget extends StatelessWidget {
     Widget build(BuildContext context) {
         return FractionallySizedBox(
             alignment: Alignment.topCenter,
-            heightFactor: 0.9,
+            heightFactor: 0.95,
             child: ClipRRect(
                 borderRadius: BorderRadius.vertical(
                     bottom: Radius.circular(40.w),
@@ -24,6 +24,7 @@ class MovieBackdropWidget extends StatelessWidget {
                 /// this stack will have the image in the back and the blur on top of it
                 ///
                 child: Stack(
+                    fit: StackFit.expand,
                     children: [
                         FractionallySizedBox(
                             heightFactor: 1,

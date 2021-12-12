@@ -12,11 +12,10 @@ class MovieAppBar extends StatelessWidget {
     Widget build(BuildContext context) {
         return Padding(
             padding: EdgeInsets.only(
-                top: ScreenUtil().statusBarHeight + 10.h,
+                top: ScreenUtil().statusBarHeight + 8.h,
                 left: 10.h,
                 right: 10.h,
             ),
-
             child: Row(
                 children: [
                     IconButton(
@@ -26,13 +25,11 @@ class MovieAppBar extends StatelessWidget {
                             height: 12.h,
                         )
                     ),
-
                     Expanded(
                         child: LogoWidget(
                             height: 14.h
                         )
                     ),
-                    
                     IconButton(
                         onPressed: () {}, 
                         icon: Icon(

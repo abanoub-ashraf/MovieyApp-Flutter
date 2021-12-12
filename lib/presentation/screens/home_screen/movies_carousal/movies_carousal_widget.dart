@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:moviey_app/presentation/screens/home_screen/movies_carousal/movie_data_widget.dart';
-import 'package:moviey_app/presentation/widgets/separator_widget.dart';
+import 'movie_data_widget.dart';
+import '../../../widgets/separator_widget.dart';
 
 import '../../../../domain/entities/movie_entity.dart';
 import '../../../widgets/movie_app_bar.dart';

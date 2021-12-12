@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:moviey_app/presentation/blocs/movie_backdrop_bloc/movie_backdrop_bloc.dart';
+import '../movie_backdrop_bloc/movie_backdrop_bloc.dart';
 
 import '../../../domain/entities/movie_entity.dart';
 import '../../../domain/entities/no_params.dart';

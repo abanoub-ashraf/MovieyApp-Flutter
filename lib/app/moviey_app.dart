@@ -18,6 +18,10 @@ class MovieyApp extends StatelessWidget {
                     primaryColor: AppColors.vulcan,
                     scaffoldBackgroundColor: AppColors.vulcan,
                     visualDensity: VisualDensity.adaptivePlatformDensity,
+                    ///
+                    /// this function comes from the theme_text.dart file in 
+                    /// the themes folder
+                    ///
                     textTheme: ThemeText.getTextTheme(),
                     appBarTheme: const AppBarTheme(elevation: 0),
                 ),

@@ -11,6 +11,7 @@ import '../domain/usecases/get_playing_now_use_case.dart';
 import '../domain/usecases/get_popular_use_case.dart';
 import '../domain/usecases/get_trending_use_case.dart';
 import '../presentation/blocs/movie_backdrop_bloc/movie_backdrop_bloc.dart';
+import '../presentation/blocs/movie_tabbed_bloc/movie_tabbed_bloc.dart';
 import '../presentation/blocs/movies_carousal_bloc/movies_carousal_bloc.dart';
 
 ///
@@ -87,6 +88,14 @@ Future init() async {
         () => MoviesCarousalBloc(
             getTrendingUseCase: getItInstance(),
             movieBackdropBloc: getItInstance()
+        )
+    );
+
+    getItInstance.registerFactory(
+        () => MovieTabbedBloc(
+            getPopularUseCase: GetPopularUseCase(getItInstance()), 
+            getPlayingNowUseCase: GetPlayingNowUseCase(getItInstance()), 
+            getComingSoonUseCase: GetComingSoonUseCase(getItInstance())
         )
     );
 }

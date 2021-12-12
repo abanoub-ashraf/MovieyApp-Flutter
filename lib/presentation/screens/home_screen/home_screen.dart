@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'movies_tabs/movie_tabs_widget.dart';
 
 import '../../../di/get_it.dart';
 import '../../blocs/movie_backdrop_bloc/movie_backdrop_bloc.dart';
+import '../../blocs/movie_tabbed_bloc/movie_tabbed_bloc.dart';
 import '../../blocs/movies_carousal_bloc/movies_carousal_bloc.dart';
 import 'movies_carousal/movies_carousal_widget.dart';
 
@@ -16,6 +18,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
     late MoviesCarousalBloc moviesCarousalBloc;
     late MovieBackdropBloc movieBackdropBloc;
+    late MovieTabbedBloc movieTabbedBloc;
 
     @override
     void initState() {
@@ -31,6 +34,8 @@ class _HomeScreenState extends State<HomeScreen> {
         ///
         movieBackdropBloc  = moviesCarousalBloc.movieBackdropBloc;
 
+        movieTabbedBloc = getItInstance<MovieTabbedBloc>();
+
         moviesCarousalBloc.add(const CarousalLoadEvent());
     }
 
@@ -40,6 +45,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
         moviesCarousalBloc.close();
         movieBackdropBloc.close();
+        movieTabbedBloc.close();
     }
 
     @override
@@ -68,6 +74,9 @@ class _HomeScreenState extends State<HomeScreen> {
                 BlocProvider(
                     create: (context) => movieBackdropBloc,
                 ),
+                BlocProvider(
+                    create: (context) => movieTabbedBloc,
+                ),
             ],
             child: Scaffold(
                 body: BlocBuilder<MoviesCarousalBloc, MoviesCarousalState>(
@@ -89,19 +98,16 @@ class _HomeScreenState extends State<HomeScreen> {
                                                 defaultIndex: state.defaultIndex,
                                             ),
                                         ),
-                                
                                         const FractionallySizedBox(
                                             alignment: Alignment.bottomCenter,
                                             heightFactor: 0.4,
-                                            child: Placeholder(
-                                                color: Colors.green,
-                                            ),
-                                        )
+                                            child: MovieTabsWidget(),
+                                        ),
+                                        // SizedBox(height: 20.h),
                                     ],
                                 ),
                             );
                         }
-                        
                         ///
                         /// if the movie carousal state is the error state
                         ///

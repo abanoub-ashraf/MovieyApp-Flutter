@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:moviey_app/presentation/themes/app_colors.dart';
+import '../themes/app_colors.dart';
 
 class SeparatorWidget extends StatelessWidget {
     const SeparatorWidget({ Key? key }) : super(key: key);

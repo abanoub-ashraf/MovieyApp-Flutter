@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
-import 'package:moviey_app/domain/entities/app_error.dart';
-import 'package:moviey_app/domain/entities/no_params.dart';
-import 'package:moviey_app/domain/usecases/use_case.dart';
+import '../entities/app_error.dart';
+import '../entities/no_params.dart';
+import 'use_case.dart';
 
 import '../entities/movie_entity.dart';
 import '../repositories/movie_repository.dart';
