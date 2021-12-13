@@ -1,4 +1,4 @@
-import '../../../../common/constants/app_strings.dart';
+import '../../../../../common/constants/app_strings.dart';
 import 'tabs_model.dart';
 
 class MovieTabbedConstants {

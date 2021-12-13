@@ -6,7 +6,12 @@ import '../themes/app_assets.dart';
 import 'logo_widget.dart';
 
 class MovieAppBar extends StatelessWidget {
-    const MovieAppBar({ Key? key }) : super(key: key);
+    final GlobalKey<ScaffoldState> scaffoldKey;
+
+    const MovieAppBar({
+        Key? key,
+        required this.scaffoldKey
+    }) : super(key: key);
 
     @override
     Widget build(BuildContext context) {
@@ -19,7 +24,9 @@ class MovieAppBar extends StatelessWidget {
             child: Row(
                 children: [
                     IconButton(
-                        onPressed: () {}, 
+                        onPressed: () { 
+                            scaffoldKey.currentState?.openDrawer();
+                        },
                         icon: SvgPicture.asset(
                             AppAssets.menuSVG,
                             height: 12.h,

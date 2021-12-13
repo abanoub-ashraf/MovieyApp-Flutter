@@ -16,6 +16,9 @@ class MovieyApp extends StatelessWidget {
                 title: 'Moviey App',
                 theme: ThemeData(
                     primaryColor: AppColors.vulcan,
+                    colorScheme: ThemeData().colorScheme.copyWith(
+                        primary: AppColors.royalBlue,
+                    ),
                     scaffoldBackgroundColor: AppColors.vulcan,
                     visualDensity: VisualDensity.adaptivePlatformDensity,
                     ///
@@ -23,7 +26,7 @@ class MovieyApp extends StatelessWidget {
                     /// the themes folder
                     ///
                     textTheme: ThemeText.getTextTheme(),
-                    appBarTheme: const AppBarTheme(elevation: 0),
+                    appBarTheme: const AppBarTheme(elevation: 0), 
                 ),
                 home: const HomeScreen(),
             ),

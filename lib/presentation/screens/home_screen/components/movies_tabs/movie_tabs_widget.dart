@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../blocs/movie_tabbed_bloc/movie_tabbed_bloc.dart';
+import '../../../../blocs/movie_tabbed_bloc/movie_tabbed_bloc.dart';
 import 'movie_tabs_constants.dart';
 import 'movie_tabs_list_view_widget.dart';
 import 'tabs_title_widget.dart';

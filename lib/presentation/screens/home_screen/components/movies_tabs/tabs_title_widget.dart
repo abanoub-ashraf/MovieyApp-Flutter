@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../common/extensions/text_theme_extensions.dart';
-import '../../../themes/app_colors.dart';
-import '../../../themes/theme_text.dart';
+import '../../../../themes/app_colors.dart';
+import '../../../../../common/extensions/text_theme_extensions.dart';
 
 class TabsTitleWidget extends StatelessWidget {
     final String title;

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../domain/entities/movie_entity.dart';
+import '../../../../../domain/entities/movie_entity.dart';
 import 'movie_card_widget.dart';
 
 class MovieTabbedListViewWidget extends StatelessWidget {
@@ -20,6 +20,9 @@ class MovieTabbedListViewWidget extends StatelessWidget {
                 vertical: 6.h
             ),
             child: ListView.separated(
+                padding: EdgeInsets.symmetric(
+                    horizontal: 12.w
+                ),
                 shrinkWrap: true,
                 itemCount: movies.length,
                 scrollDirection: Axis.horizontal,

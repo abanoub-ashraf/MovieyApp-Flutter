@@ -1,8 +1,8 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../common/extensions/string_extensions.dart';
-import '../../../../data/core/api_constants.dart';
+import '../../../../../data/core/api_constants.dart';
+import '../../../../../common/extensions/string_extensions.dart';
 
 class MovieCardWidget extends StatelessWidget {
     final int movieId;

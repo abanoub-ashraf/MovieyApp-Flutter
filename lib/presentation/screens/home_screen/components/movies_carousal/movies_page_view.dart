@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../../../../domain/entities/movie_entity.dart';
-import '../../../blocs/movie_backdrop_bloc/movie_backdrop_bloc.dart';
+import '../../../../../domain/entities/movie_entity.dart';
+import '../../../../blocs/movie_backdrop_bloc/movie_backdrop_bloc.dart';
 import 'animated_movie_card_widget.dart';
 
 class MoviesPageView extends StatefulWidget {

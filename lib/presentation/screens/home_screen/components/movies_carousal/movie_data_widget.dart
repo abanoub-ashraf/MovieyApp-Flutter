@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../blocs/movie_backdrop_bloc/movie_backdrop_bloc.dart';
+import '../../../../blocs/movie_backdrop_bloc/movie_backdrop_bloc.dart';
 
 class MovieDataWidget extends StatelessWidget {
     const MovieDataWidget({ Key? key }) : super(key: key);
